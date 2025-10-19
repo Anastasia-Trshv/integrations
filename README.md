@@ -9,8 +9,17 @@ Tasks API (FastAPI)
   - Task: id, project_id, title, completed, priority (только v2), user_id (v2)
   - User (v2): id, name, email
 
+Запуск
+1) Установите зависимости
+```bash
+python -m venv .venv && .venv/Scripts/activate
+pip install -r requirements.txt
 ```
-Дкументация: Swagger UI — http://localhost:8000/docs, OpenAPI JSON — http://localhost:8000/openapi.json
+2) Запустите сервер
+```bash
+uvicorn main:app --reload --app-dir src
+```
+3) Откройте документацию: Swagger UI — http://localhost:8000/docs, OpenAPI JSON — http://localhost:8000/openapi.json
 
 Аутентификация
 - API Key в заголовке `X-API-Key`. Значение по умолчанию для разработки: `dev-secret-key` (можно переопределить переменной окружения `API_KEY`).
